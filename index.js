@@ -8,6 +8,9 @@ function getEvents() {
     fetch(endPoint)
     .then(response => response.json())
     .then(events => {
-        console.log(events);
+        events.data.forEach(event => {
+            const eventInfo = `
+            <div data-id=${event.year} - ${event.title}<br>${event.description}>`
+        })
     })
 }
